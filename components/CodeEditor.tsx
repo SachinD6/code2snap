@@ -33,6 +33,8 @@ interface CodeEditorProps {
   icon: string;
   background?: string;
   currentPadding?: string;
+  setTitle: (title: string) => void;
+
 }
 
 export default function CodeEditor({
@@ -63,11 +65,11 @@ export default function CodeEditor({
     setCode(newCode);
   };
 
-  const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     // Extract the title without the extension
     const newTitle = e.target.value.split(".")[0];
     setTitle(newTitle);
-  };
+  };  
 
   // @ts-ignore
   const handleResize = (evt, direction, ref, pos) => {
@@ -91,10 +93,10 @@ export default function CodeEditor({
         <Resizable
           minHeight={466}
           minWidth={510}
-          maxWidth={1000}
+          maxWidth={800}
           defaultSize={{
             width: width,
-            height: height || 500,
+            height: height || 400,
           }}
           onResize={handleResize}
           className="resize-container relative container"
@@ -102,7 +104,7 @@ export default function CodeEditor({
             background: background,
           }}
         >
-          <div className="container  p-16 mt-[12rem]">
+          <div className="container  p-16 mt-[12rem] rounded-xl">
             <div
               className="handle handle-top absolute left-1/2 translate-x-[-50%] top-[-4px] w-2 h-2 
             rounded-full bg-slate-300 hover:bg-slate-50"
@@ -123,7 +125,7 @@ export default function CodeEditor({
             <div
               className="
             code-title h-[52px] px-4 flex items-center justify-between
-            bg-black bg-opacity-80"
+            bg-black bg-opacity-80 rounded-t-lg"
             >
               <div className="dots flex items-center gap-1">
                 <div className="w-3 h-3 rounded-full bg-[#ff5656]"></div>
@@ -165,7 +167,7 @@ export default function CodeEditor({
               width={`${width}px`}
               highlightActiveLine={false}
               editorProps={{ $blockScrolling: true }}
-              className="ace-editor-container mx-auto max-w-full"
+              className="ace-editor-container mx-auto max-w-full rounded-b-lg"
               onChange={handleCodeChange}
             />
           </div>

@@ -48,8 +48,10 @@ export default function LanguageSelector({
 
   return (
     <>
+      <div className="flex flex-col">
+     <p className="py-1 text-slate-300">Language </p>
       <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger asChild>
+      <PopoverTrigger className="bg-gray-900 text-white hover:text-white hover:bg-gray-800" asChild>
         <Button
           variant="outline"
           role="combobox"
@@ -57,13 +59,13 @@ export default function LanguageSelector({
           className="w-[200px] justify-between"
         >
           {value
-            ? languages.find((language) => language.value === value)?.label // change to label
+            ? languages.find((language) => language.value === value)?.label
             : "Select Language..."}
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-0">
-        <Command>
+      <PopoverContent className="w-[200px] p-0 bg-gray-900">
+        <Command className="bg-gray-900 text-white">
           <CommandInput placeholder="Search language..." />
           <CommandEmpty>No Language found.</CommandEmpty>
           <CommandGroup>
@@ -78,6 +80,7 @@ export default function LanguageSelector({
                   setOpen(false);
 
                 }}
+                className="bg-gray-900 text-white focus:bg-gray-800 focus:text-white"
               >
                 <Check
                   className={cn(
@@ -85,13 +88,14 @@ export default function LanguageSelector({
                     value === language.value ? "opacity-100" : "opacity-0"
                   )}
                 />
-                {language.label}  {/*change to label*/}
+               <span className="font-medium"> {language.label} </span> 
               </CommandItem>
             ))}
           </CommandGroup>
         </Command>
       </PopoverContent>
     </Popover>
+    </div>
     </>
   )
 }

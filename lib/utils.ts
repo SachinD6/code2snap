@@ -54,17 +54,19 @@ export const languages = [
 ];
 
 export const backgrounds = [
-  "linear-gradient(354deg,#ff75b5,#ffb86c)",
-  "linear-gradient(140deg, rgb(255, 207, 115), rgb(255, 122, 47))",
-  "linear-gradient(90deg,#93f9b9,#1d976c)",
-  "linear-gradient(140deg, rgb(142, 199, 251), rgb(28, 85, 170))",
-  "linear-gradient(337deg,#654ea3,#da98b4)",
-  "#000",
-  "#fff",
-  "linear-gradient(270deg,#fc6767,#ec008c)",
-  "linear-gradient(140deg, rgb(165, 142, 251), rgb(233, 191, 248))",
-  "linear-gradient(270deg,#514a9d,#24c6dc)",
+  // { color: "transparent", name: "Transparent" },
+  { color: "linear-gradient(354deg,#ff75b5,#ffb86c)", name: "Fairy Dust" },
+  { color: "linear-gradient(140deg, rgb(255, 207, 115), rgb(255, 122, 47))", name: "Sunset Blaze" },
+  { color: "linear-gradient(90deg,#93f9b9,#1d976c)", name: "Emerald Oasis" },
+  { color: "linear-gradient(140deg, rgb(142, 199, 251), rgb(28, 85, 170))", name: "Azure Dream" },
+  { color: "linear-gradient(337deg,#654ea3,#da98b4)", name: "Mystic Twilight" },
+  { color: "#000", name: "Midnight Shadow" },
+  { color: "#fff", name: "Snow White" },
+  { color: "linear-gradient(270deg,#fc6767,#ec008c)", name: "Crimson Passion" },
+  { color: "linear-gradient(140deg, rgb(165, 142, 251), rgb(233, 191, 248))", name: "Whispering Lilac" },
+  { color: "linear-gradient(270deg,#514a9d,#24c6dc)", name: "Sapphire Serenity" },
 ];
+
 
 export const getExtension = (language: string) => {
   switch (language) {
@@ -97,3 +99,11 @@ export function downloadScreenShot() {
       });
   }
 }
+
+export const codeThemes =[
+  "github",
+  "monokai",
+  "terminal",
+  "twilight"
+
+];

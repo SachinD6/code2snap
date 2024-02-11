@@ -20,7 +20,7 @@ export default function PaddingSelector({
   return (
     <>
       <div className="flex flex-col">
-      <p className="py-1 text-slate-300">Select Padding: </p>
+      <p className="py-1 text-slate-300">Select Padding </p>
 
       <div className="flex gap-6">
         {paddings.map((padding, idx) => {
@@ -31,7 +31,7 @@ export default function PaddingSelector({
               className={`h-[37px]  flex items-center justify-center text-sm px-2 cursor-pointer
                 ${
                   currentPadding === padding &&
-                  "bg-[#3C3C3C] text-white rounded-md"
+                  "bg-gray-800 text-white rounded-md"
                 } hover:text-white ease-linear transition-all duration-300
               `}
             >
